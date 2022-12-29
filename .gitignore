@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env
+*.csv
+src/chatgpt-prompt-search-firebase-adminsdk-g9lsr-3b5ef3e34e.json
