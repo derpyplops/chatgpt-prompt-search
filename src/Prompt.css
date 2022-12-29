@@ -1,0 +1,7 @@
+.prompt {
+    display: flex;
+    color: yellow;
+    background-color: #43424c;
+    padding: 0.5rem;
+    flex-direction: column;
+}

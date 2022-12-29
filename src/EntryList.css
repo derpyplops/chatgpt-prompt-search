@@ -1,0 +1,9 @@
+.entry-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+    width: 600px;
+    background-color: rgb(65, 66, 76);
+}
