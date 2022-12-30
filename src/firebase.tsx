@@ -43,9 +43,6 @@ const parseEntry = (doc: any) => {
 const getEntries: () => Promise<Entry[]> = async () => {
     const docs = await getDocs(collection(db, 'entries'))
     const ds: Entry[] = []
-    // docs.forEach((doc) => {
-    //     console.log(doc.title)
-    // })
     docs.forEach((doc) => {
         ds.push(parseEntry(doc))
     })
