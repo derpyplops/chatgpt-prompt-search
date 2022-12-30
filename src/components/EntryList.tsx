@@ -17,6 +17,7 @@ const renderEntry = (entry: Entry) => {
             backgroundColor="#343541"
             marginBottom="20px"
             padding="20px"
+            key={entry.title}
         >
             <CardHeader display="flex" alignItems="center">
                 <Heading>{entry.title}</Heading>
