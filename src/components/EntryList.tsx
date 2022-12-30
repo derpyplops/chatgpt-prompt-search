@@ -3,7 +3,11 @@ import { Card, CardHeader, Heading, Tag } from '@chakra-ui/react'
 import '../EntryList.css'
 import Prompt from './Prompt'
 import { Entry } from '../types/entry'
-import { getEntries } from '../firebase'
+import PropTypes from 'prop-types'
+
+interface Props {
+    entries: Entry[]
+}
 
 const renderEntry = (entry: Entry) => {
     return (
@@ -26,24 +30,15 @@ const renderEntry = (entry: Entry) => {
         </Card>
     )
 }
-class EntryList extends Component<{}, { entries: Entry[] }> {
-    constructor() {
-        super({})
-        this.state = {
-            entries: [],
-        }
-    }
-
-    async componentDidMount() {
-        const entries = await getEntries()
-        this.setState({ entries })
-        console.log(`Entries: ${entries.length} entries loaded.`)
+class EntryList extends Component<Props, {}> {
+    static propTypes = {
+        entries: PropTypes.arrayOf(PropTypes.object).isRequired,
     }
 
     render() {
         return (
             <div className="entry-list">
-                {this.state.entries.map(renderEntry)}
+                {this.props.entries.map(renderEntry)}
             </div>
         )
     }
